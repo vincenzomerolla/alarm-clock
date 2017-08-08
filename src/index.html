@@ -1,13 +1,153 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>alarm-clock</title>
-    <meta name="description" content="">
-  </head>
-  <body>
-    <div id="app"></div>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Alarm Clock</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons|Roboto+Condensed:300,400|Fira+Sans:300,400,700" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+    <div class="alarm-clock">
+      <div class="clock">
+        <span class="clock__hours">12</span>:
+        <span class="clock__minutes">00</span>:
+        <span class="clock__seconds">00</span>
+      </div>
+      <button class="btn btn--icon" type="button">
+        <i class="material-icons">add</i>
+      </button>
+    </div>
+  </main>
+  <aside class="modal" id="ring-alarm-modal">
+    <div class="modal__content">
+      <h1 class="text-center">Alarm</h1>
+      <div class="modal__buttons">
+        <button class="modal__close btn btn--icon" type="button">
+          <i class="material-icons">close</i>
+        </button>
+      </div>
+    </div>
+  </aside>
+  <aside class="modal" id="set-alarm-modal">
+    <div class="modal__content">
+      <form id="set-alarm-form">
+        <div>
+          <h3>Time</h3>
+          <div class="alarm-time">
+            <select name="hour">
+              <option value="12">12</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+            </select>
+            <select name="minute">
+              <option value="0">00</option>
+              <option value="1">01</option>
+              <option value="2">02</option>
+              <option value="3">03</option>
+              <option value="4">04</option>
+              <option value="5">05</option>
+              <option value="6">06</option>
+              <option value="7">07</option>
+              <option value="8">08</option>
+              <option value="9">09</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+              <option value="32">32</option>
+              <option value="33">33</option>
+              <option value="34">34</option>
+              <option value="35">35</option>
+              <option value="36">36</option>
+              <option value="37">37</option>
+              <option value="38">38</option>
+              <option value="39">39</option>
+              <option value="40">40</option>
+              <option value="41">41</option>
+              <option value="42">42</option>
+              <option value="43">43</option>
+              <option value="44">44</option>
+              <option value="45">45</option>
+              <option value="46">46</option>
+              <option value="47">47</option>
+              <option value="48">48</option>
+              <option value="49">49</option>
+              <option value="50">50</option>
+              <option value="51">51</option>
+              <option value="52">52</option>
+              <option value="53">53</option>
+              <option value="54">54</option>
+              <option value="55">55</option>
+              <option value="56">56</option>
+              <option value="57">57</option>
+              <option value="58">58</option>
+              <option value="59">59</option>
+            </select>
+            <select name="meridiem">
+              <option value="AM">AM</option>
+              <option value="PM">PM</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <h3>Repeat</h3>
+          <div class="alarm-repeat">
+            <input type="checkbox" id="sunday" name="days[]" value="0"/>
+            <label for="sunday">S</label>
+            <input type="checkbox" id="monday" name="days[]" value="1"/>
+            <label for="monday">M</label>
+            <input type="checkbox" id="tuesday" name="days[]" value="2"/>
+            <label for="tuesday">T</label>
+            <input type="checkbox" id="wednesday" name="days[]" value="3"/>
+            <label for="wednesday">W</label>
+            <input type="checkbox" id="thursday" name="days[]" value="4"/>
+            <label for="thursday">T</label>
+            <input type="checkbox" id="friday" name="days[]" value="5"/>
+            <label for="friday">F</label>
+            <input type="checkbox" id="saturday" name="days[]" value="6"/>
+            <label for="saturday">S</label>
+          </div>
+        </div>
+        <button class="modal__save btn btn--block" type="submit">Save Alarm</button>
+      </form>
+      <div class="modal__buttons">
+        <button class="modal__close btn btn--icon" type="button">
+          <i class="material-icons">close</i>
+        </button>
+      </div>
+    </div>
+  </aside>
+</body>
 </html>

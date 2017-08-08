@@ -1,3 +1,7 @@
-let app = document.querySelector('#app')
+import AlarmClock from './lib/alarm-clock';
+import { ready } from './utils/dom';
+import './app.css';
 
-app.innerHTML = '<h2>Welcome to alarm-clock</h2>'
+ready(() => {
+  let alarmClock = new AlarmClock(document.querySelector('.alarm-clock'));
+});

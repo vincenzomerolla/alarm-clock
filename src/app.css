@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Fira Sans';
+  font-size: 14px;
+}
+
+media (min-width: 375px) {
+  html, body {
+    font-size: 16px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Fira Sans';
+  font-weight: normal;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.alarm-clock {
+  align-items: center;
+  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+}
+
+.alarm-clock .clock.clock--digital {
+  font-family: 'Roboto Condensed';
+  font-size: 4.5rem;
+}
+
+
+#set-alarm-modal .alarm-time,
+#set-alarm-modal .alarm-repeat {
+  display: flex;
+}
+
+#set-alarm-modal .alarm-repeat {
+  justify-content: space-between;
+}
+
+
+.alarm-clock .btn,
+.modal .modal__close {
+  bottom: 3rem;
+  left: calc(50% - 3rem / 2);
+  position: absolute;
+}
+
+
+button.btn {
+  background-color: #a18cd1;
+  border: 1px solid #a18cd1;
+  border-radius: 50%;
+  box-shadow: 0px 11px 81px -6px rgba(0,0,0,0.75);
+  cursor: pointer;
+  color: #fff;
+  border-radius: 1.2rem;
+  font-family: 'Fira Sans';
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  text-align: center;
+}
+
+button.btn.btn--icon {
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  padding: 0;
+}
+
+button.btn--block {
+  display: block;
+  width: 100%;
+}
+
+.modal {
+  align-items: center;
+  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+  color: #fff;
+  display: none;
+  justify-content: center;
+  position: absolute;
+  height: 0;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.modal#ring-alarm-modal {
+  z-index: 1001;
+}
+
+.modal select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 1.2rem;
+  color: #fff;
+  font-family: 'Fira Sans';
+  padding: 0.6rem 1.2rem;
+  width: 33.333333%;
+}
+
+.modal select:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.modal input[type="checkbox"] {
+  display: none;
+}
+
+.modal input[type="checkbox"] + label {
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Fira Sans';
+  line-height: 3rem;
+  height: 3rem;
+  width: 3rem;
+  text-align: center;
+}
+
+.modal input[type="checkbox"]:checked + label {
+  border: 1px solid #fff;
+}
+
+.modal.open {
+  display: flex;
+  height: 100%;
+}
+
+.modal .modal__content {
+  max-width: 30rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+}
+
+.modal .modal__content .modal__buttons {
+  text-align: center;
+}
+
+.modal button[type="submit"] {
+  margin-top: 1rem;
+}
+
+.modal__close {
+}
